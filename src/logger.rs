@@ -28,7 +28,11 @@ impl Logger {
             LogLevel::Success => "\x1b[32m", // green
         };
 
-        println!("{}{}{}", color_code, message, "\x1b[0m");
+        println!("{}{}\x1b[0m", color_code, message);
+    }
+
+    pub fn is_debug(&self) -> bool {
+        self.debug
     }
 }
 
